@@ -99,6 +99,26 @@
       transition: background .2s ease;
     }
 
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .actions .button { margin-top: 0; padding-inline: 12px; }
+
+    .button.secondary {
+      border: 2px solid var(--primary);
+      color: var(--primary-dark);
+      background: #fff;
+    }
+
+    .button.secondary:hover, .button.secondary:focus-visible {
+      color: #fff;
+      background: var(--primary-dark);
+    }
+
     .button:hover, .button:focus-visible { background: var(--primary-dark); }
     .button:focus-visible { outline: 3px solid #7dd3c7; outline-offset: 3px; }
 
@@ -108,6 +128,7 @@
       header { padding-top: 48px; }
       .grid { grid-template-columns: 1fr; gap: 16px; }
       .card { min-height: 0; padding: 22px; }
+      .actions { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -131,7 +152,10 @@
           <div><p class="category">授業・プレゼンテーション</p><h2>ホワイトボード・モーション・スタジオ</h2></div>
         </div>
         <p class="description">文字、図形、画像などを配置し、変化や動きを見せながら説明できるデジタルホワイトボードです。</p>
-        <a class="button" href="https://canary1950.github.io/whiteboard-motion-studio/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+        <div class="actions">
+          <a class="button" href="https://canary1950.github.io/whiteboard-motion-studio/" target="_blank" rel="noopener">パソコン版 <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://canary1950.github.io/whiteboard-motion-studio/mobile.html?v=2" target="_blank" rel="noopener">スマホ版 <span aria-hidden="true">↗</span></a>
+        </div>
       </article>
 
       <article class="card">

@@ -21,10 +21,10 @@
   </style>
 </head>
 <body>
-<main class="app">
+<main class="app step-mode">
   <div class="top"><a class="home" href="index.html">← メニューへ戻る</a><span class="pill" id="progress">1 / 8</span></div>
   <h1 class="title">🎲 ジャマイカもどき</h1>
-  <div class="mode-switch"><button class="mode-btn active" data-mode="single">1つの式</button><button class="mode-btn" data-mode="step">いくつかの式</button></div>
+  <div class="mode-switch"><button class="mode-btn" data-mode="single">1つの式</button><button class="mode-btn active" data-mode="step">いくつかの式</button></div>
   <section class="card">
     <div class="stats"><div class="stat">タイム<strong id="timer">0.0秒</strong></div><div class="stat">ベスト<strong id="best">—</strong></div><div class="stat">正解数<strong id="score">0</strong></div></div>
     <div class="board" id="board"><button class="num"></button><button class="num"></button><button class="num"></button><button class="num"></button><button class="num"></button><div class="target"><small>めざす数</small><span id="target"></span></div></div>
@@ -40,7 +40,7 @@
 (()=>{'use strict';
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const els={app:$('.app'),nums:$$('.num'),keys:$$('.key:not(.equals)'),modes:$$('.mode-btn'),target:$('#target'),expr:$('#expression'),timer:$('#timer'),best:$('#best'),score:$('#score'),progress:$('#progress'),msg:$('#message'),modal:$('#modal'),final:$('#finalText'),total:$('#totalTime')};
-  let set=[],index=0,solved=0,tokens=[],start=0,tick=null,elapsed=0,setStart=0,sound=true,mode='single',pool=[],stepHistory=[],uid=0;
+  let set=[],index=0,solved=0,tokens=[],start=0,tick=null,elapsed=0,setStart=0,sound=true,mode='step',pool=[],stepHistory=[],uid=0;
   const opMap={'＋':'+','−':'-','×':'*','÷':'/'};
   function shuffle(a){for(let i=a.length-1;i;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function makeProblem(){

@@ -124,6 +124,23 @@
 
     footer { border-top: 1px solid var(--line); padding: 28px 0 42px; color: var(--muted); text-align: center; font-size: .92rem; }
 
+    .visit-counter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 38px;
+      margin-bottom: 10px;
+      padding: 5px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: rgba(255,255,255,.72);
+      font-weight: 700;
+    }
+
+    #visit-count { font-variant-numeric: tabular-nums; }
+
     @media (max-width: 700px) {
       header { padding-top: 48px; }
       .grid { grid-template-columns: 1fr; gap: 16px; }
@@ -146,33 +163,6 @@
   <main class="wrap">
     <h2 class="section-title">公開中のアプリ</h2>
     <div class="grid">
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">📖</div>
-          <div><p class="category">制作ガイド・PDF</p><h2>AIでアプリを作りGitHubで公開する手順</h2></div>
-        </div>
-        <p class="description">AIへの依頼文、エラー時のスクショ相談、GitHubへのログインから公開までを画面付きで説明する24ページのガイドです。</p>
-        <a class="button" href="guides/ai-app-github-guide.pdf" target="_blank" rel="noopener" type="application/pdf">PDFを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">🔢</div>
-          <div><p class="category">パズル・数独</p><h2>段階別数独問題</h2></div>
-        </div>
-        <p class="description">広告なしで楽しめる数独。7段階の難易度、答えを明かさないヒント、経過時間の一時停止、途中保存に対応しています。</p>
-        <a class="button" href="sudoku/?v=20260923-4" target="_blank" rel="noopener">ゲームを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">☗</div>
-          <div><p class="category">将棋・思考ゲーム</p><h2>詰将棋｜五手詰め・三手詰め</h2></div>
-        </div>
-        <p class="description">五手詰めと三手詰めを各10問収録。駒を動かして解き、ヒントや解答アニメで手順を確かめられます。</p>
-        <a class="button" href="https://canary1950.github.io/tsume-shogi-puzzles/" target="_blank" rel="noopener">問題を解く <span aria-hidden="true">↗</span></a>
-      </article>
-
       <article class="card">
         <div class="card-top">
           <div class="icon" aria-hidden="true">🖥️</div>
@@ -227,7 +217,7 @@
           <div><p class="category">英語学習・表現比較</p><h2>日本語から4種の英文に変換</h2></div>
         </div>
         <p class="description">日本語で伝えたいことから、場面や丁寧さの異なる4つの英文を比べられます。話し言葉の入力にも対応しています。</p>
-        <a class="button" href="https://canary1950.github.io/japanese-to-english-expressions/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+        <a class="button" href="japanese_to_english_nuance.html" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="card">
@@ -305,7 +295,33 @@
   </main>
 
   <footer>
-    <div class="wrap">© 2026 Takeshi Sakai — 学びと上達を支えるアプリ</div>
+    <div class="wrap">
+      <div class="visit-counter" aria-live="polite">
+        <span aria-hidden="true">👀</span>
+        <span>総訪問回数 <strong id="visit-count">集計中…</strong></span>
+      </div>
+      <div>© 2026 Takeshi Sakai — 学びと上達を支えるアプリ</div>
+    </div>
   </footer>
+
+  <script>
+    (function () {
+      var countElement = document.getElementById('visit-count');
+      var counterUrl = 'https://counterapi.com/api/canary1950.github.io/view/app-library-home';
+
+      fetch(counterUrl)
+        .then(function (response) {
+          if (!response.ok) throw new Error('Counter request failed');
+          return response.json();
+        })
+        .then(function (data) {
+          if (typeof data.value !== 'number') throw new Error('Invalid counter value');
+          countElement.textContent = data.value.toLocaleString('ja-JP') + '回';
+        })
+        .catch(function () {
+          countElement.textContent = '取得できませんでした';
+        });
+    }());
+  </script>
 </body>
 </html>

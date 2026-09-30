@@ -139,6 +139,8 @@
       font-weight: 700;
     }
 
+    .counter-area { margin: 0 0 20px; text-align: center; }
+
     #visit-count { font-variant-numeric: tabular-nums; }
 
     @media (max-width: 700px) {
@@ -161,6 +163,12 @@
   </header>
 
   <main class="wrap">
+    <div class="counter-area">
+      <div class="visit-counter" aria-live="polite">
+        <span aria-hidden="true">👀</span>
+        <span>総訪問回数 <strong id="visit-count">集計中…</strong></span>
+      </div>
+    </div>
     <h2 class="section-title">公開中のアプリ</h2>
     <div class="grid">
       <article class="card">
@@ -296,10 +304,6 @@
 
   <footer>
     <div class="wrap">
-      <div class="visit-counter" aria-live="polite">
-        <span aria-hidden="true">👀</span>
-        <span>総訪問回数 <strong id="visit-count">集計中…</strong></span>
-      </div>
       <div>© 2026 Takeshi Sakai — 学びと上達を支えるアプリ</div>
     </div>
   </footer>

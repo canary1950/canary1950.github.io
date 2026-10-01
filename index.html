@@ -53,6 +53,15 @@
     .section-title { margin: 20px 0 18px; font-size: 1.3rem; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; padding-bottom: 60px; }
 
+    .group-title {
+      grid-column: 1 / -1;
+      margin: 18px 0 -4px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #b9d9d5;
+      color: var(--primary-dark);
+      font-size: 1.16rem;
+    }
+
     .card {
       display: flex;
       flex-direction: column;
@@ -171,34 +180,24 @@
     </div>
     <h2 class="section-title">公開中のアプリ</h2>
     <div class="grid">
+      <h2 class="group-title">作り方・公開資料</h2>
       <article class="card">
         <div class="card-top">
-          <div class="icon" aria-hidden="true">🖥️</div>
-          <div><p class="category">授業・プレゼンテーション</p><h2>ホワイトボード・モーション・スタジオ</h2></div>
+          <div class="icon" aria-hidden="true">📘</div>
+          <div><p class="category">資料・プレゼンテーション</p><h2>AIアプリ作成とGitHub公開</h2></div>
         </div>
-        <p class="description">文字、図形、画像などを配置し、変化や動きを見せながら説明できるデジタルホワイトボードです。</p>
-        <div class="actions">
-          <a class="button" href="https://canary1950.github.io/whiteboard-motion-studio/" target="_blank" rel="noopener">パソコン版 <span aria-hidden="true">↗</span></a>
-          <a class="button secondary" href="https://canary1950.github.io/whiteboard-motion-studio/mobile.html?v=2" target="_blank" rel="noopener">スマホ版 <span aria-hidden="true">↗</span></a>
-        </div>
+        <p class="description">AIへの依頼方法、エラー画面をスクリーンショットで相談する方法、GitHubでWebアプリを公開するまでの手順をまとめたPDF資料です。</p>
+        <a class="button" href="ai_app_github_guide.pdf" target="_blank" rel="noopener">PDFを開く <span aria-hidden="true">↗</span></a>
       </article>
 
+      <h2 class="group-title">英語学習・英会話</h2>
       <article class="card">
         <div class="card-top">
-          <div class="icon" aria-hidden="true">∫</div>
-          <div><p class="category">数学学習</p><h2>微分積分学習アプリ</h2></div>
+          <div class="icon" aria-hidden="true">✨</div>
+          <div><p class="category">英語学習・AI英会話</p><h2>English Tutor Gemini</h2></div>
         </div>
-        <p class="description">微分・積分の考え方を、基礎からもう一度学び直すための学習アプリです。</p>
-        <a class="button" href="https://canary1950.github.io/calculus-relearning/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">💬</div>
-          <div><p class="category">英語学習</p><h2>人とつながる英語表現50</h2></div>
-        </div>
-        <p class="description">人との会話で役立つ50の英語表現を、イラストやクイズを通して楽しく身につけられます。</p>
-        <a class="button" href="https://canary1950.github.io/connect-in-english-50/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+        <p class="description">Geminiと英語で会話しながら、より自然な表現への訂正を確認し、音声を繰り返し聞いて練習できる英会話アプリです。</p>
+        <a class="button" href="https://copy-of-english-conversation-practice.ai.studio/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="card">
@@ -212,11 +211,20 @@
 
       <article class="card">
         <div class="card-top">
-          <div class="icon" aria-hidden="true">✨</div>
-          <div><p class="category">英語学習・AI英会話</p><h2>English Tutor Gemini</h2></div>
+          <div class="icon" aria-hidden="true">🗣️</div>
+          <div><p class="category">英語学習・表現比較</p><h2>日本語から4種の英文に変換</h2></div>
         </div>
-        <p class="description">Geminiと英語で会話しながら、より自然な表現への訂正を確認し、音声を繰り返し聞いて練習できる英会話アプリです。</p>
-        <a class="button" href="https://copy-of-english-conversation-practice.ai.studio/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+        <p class="description">日本語で伝えたいことから、場面や丁寧さの異なる4つの英文を比べられます。話し言葉の入力にも対応しています。</p>
+        <a class="button" href="japanese_to_english_nuance.html" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">💬</div>
+          <div><p class="category">英語学習</p><h2>人とつながる英語表現50</h2></div>
+        </div>
+        <p class="description">人との会話で役立つ50の英語表現を、イラストやクイズを通して楽しく身につけられます。</p>
+        <a class="button" href="https://canary1950.github.io/connect-in-english-50/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="card">
@@ -228,15 +236,20 @@
         <a class="button" href="https://canary1950.github.io/englishtest1/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
+      <h2 class="group-title">授業・学習支援</h2>
       <article class="card">
         <div class="card-top">
-          <div class="icon" aria-hidden="true">🗣️</div>
-          <div><p class="category">英語学習・表現比較</p><h2>日本語から4種の英文に変換</h2></div>
+          <div class="icon" aria-hidden="true">🖥️</div>
+          <div><p class="category">授業・プレゼンテーション</p><h2>ホワイトボード・モーション・スタジオ</h2></div>
         </div>
-        <p class="description">日本語で伝えたいことから、場面や丁寧さの異なる4つの英文を比べられます。話し言葉の入力にも対応しています。</p>
-        <a class="button" href="japanese_to_english_nuance.html" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+        <p class="description">文字、図形、画像などを配置し、変化や動きを見せながら説明できるデジタルホワイトボードです。</p>
+        <div class="actions">
+          <a class="button" href="https://canary1950.github.io/whiteboard-motion-studio/" target="_blank" rel="noopener">パソコン版 <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="https://canary1950.github.io/whiteboard-motion-studio/mobile.html?v=2" target="_blank" rel="noopener">スマホ版 <span aria-hidden="true">↗</span></a>
+        </div>
       </article>
 
+      <h2 class="group-title">国語・古典</h2>
       <article class="card">
         <div class="card-top">
           <div class="icon" aria-hidden="true">漢</div>
@@ -244,24 +257,6 @@
         </div>
         <p class="description">動植物、暮らし、送り仮名付きの言葉、全国の地名など500語を、読み方と由来・漢字の表し方から学べます。</p>
         <a class="button" href="https://canary1950.github.io/kanji-reading-origins/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">🏓</div>
-          <div><p class="category">スポーツ分析</p><h2>卓球フォーム分析</h2></div>
-        </div>
-        <p class="description">プレー動画から身体の動きやフォームを分析し、上達のためのポイントを分かりやすく示します。</p>
-        <a class="button" href="https://canary1950.github.io/tabletennis/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">🎯</div>
-          <div><p class="category">スポーツ分析</p><h2>ダーツフォーム分析</h2></div>
-        </div>
-        <p class="description">投球動画から腕の動き、加速、リリース、フォロースルーを確認し、フォーム改善を支援します。</p>
-        <a class="button" href="https://canary1950.github.io/darts-coach-mediapipe/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="card">
@@ -282,22 +277,14 @@
         <a class="button" href="https://canary1950.github.io/goshoku-hyakunin-isshu/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
+      <h2 class="group-title">数学・算数・パズル</h2>
       <article class="card">
         <div class="card-top">
-          <div class="icon" aria-hidden="true">📈</div>
-          <div><p class="category">投資学習・AI分析</p><h2>日本株AI分析</h2></div>
+          <div class="icon" aria-hidden="true">∫</div>
+          <div><p class="category">数学学習</p><h2>微分積分学習アプリ</h2></div>
         </div>
-        <p class="description">J-Quantsの株価・財務データを表示し、Gemini AIが業績、株価傾向、割安性、強みや注意点を分かりやすく解説します。</p>
-        <a class="button" href="https://script.google.com/macros/s/AKfycbyz183SpZXIpmBiS9vHJxBI42-yb4WlItFoJEgXIlMOdku93jTOsicv3h-lBStAyMsUIQ/exec" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div class="icon" aria-hidden="true">📘</div>
-          <div><p class="category">資料・プレゼンテーション</p><h2>AIアプリ作成とGitHub公開</h2></div>
-        </div>
-        <p class="description">AIへの依頼方法、エラー画面をスクリーンショットで相談する方法、GitHubでWebアプリを公開するまでの手順をまとめたPDF資料です。</p>
-        <a class="button" href="ai_app_github_guide.pdf" target="_blank" rel="noopener">PDFを開く <span aria-hidden="true">↗</span></a>
+        <p class="description">微分・積分の考え方を、基礎からもう一度学び直すための学習アプリです。</p>
+        <a class="button" href="https://canary1950.github.io/calculus-relearning/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="card">
@@ -316,6 +303,35 @@
         </div>
         <p class="description">隣の玉を飛び越して取り除き、最後の1個を目指す一人用パズルです。ヒント、タイマー、元に戻す機能に対応しています。</p>
         <a class="button" href="https://circular-peg-solitaire.canaria1.chatgpt.site" target="_blank" rel="noopener">ゲームを開く <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <h2 class="group-title">スポーツ分析</h2>
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">🏓</div>
+          <div><p class="category">スポーツ分析</p><h2>卓球フォーム分析</h2></div>
+        </div>
+        <p class="description">プレー動画から身体の動きやフォームを分析し、上達のためのポイントを分かりやすく示します。</p>
+        <a class="button" href="https://canary1950.github.io/tabletennis/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">🎯</div>
+          <div><p class="category">スポーツ分析</p><h2>ダーツフォーム分析</h2></div>
+        </div>
+        <p class="description">投球動画から腕の動き、加速、リリース、フォロースルーを確認し、フォーム改善を支援します。</p>
+        <a class="button" href="https://canary1950.github.io/darts-coach-mediapipe/" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <h2 class="group-title">その他の学習・分析</h2>
+      <article class="card">
+        <div class="card-top">
+          <div class="icon" aria-hidden="true">📈</div>
+          <div><p class="category">投資学習・AI分析</p><h2>日本株AI分析</h2></div>
+        </div>
+        <p class="description">J-Quantsの株価・財務データを表示し、Gemini AIが業績、株価傾向、割安性、強みや注意点を分かりやすく解説します。</p>
+        <a class="button" href="https://script.google.com/macros/s/AKfycbyz183SpZXIpmBiS9vHJxBI42-yb4WlItFoJEgXIlMOdku93jTOsicv3h-lBStAyMsUIQ/exec" target="_blank" rel="noopener">アプリを開く <span aria-hidden="true">↗</span></a>
       </article>
     </div>
   </main>
